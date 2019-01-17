@@ -120,7 +120,7 @@ SkyPlusHDBoxAccessory.prototype = {
 		
 		SkyPlusHD.findBox(skyConfig.ip, skyConfig).then(function(box) {
 			skyBox = box;
-			skyRemote = new SkyRemote(skyConfig.ip);
+			skyRemote = new SkyRemote(skyConfig.ip, SkyRemote.SKY_Q_LEGACY);
 			platform.log('Connected to Sky box ' + skyBox.model + ' at ' + skyConfig.ip);
 		}).catch(function(err) {
 			platform.log('Failed to connect to Sky Box, will retry in 30s');
